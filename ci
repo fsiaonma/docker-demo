@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+PACK_NAME="docker-demo.tgz"
+
+echo "----- lint -----"
+npm install;
+
+echo "----- pack -----"
+touch $PACK_NAME
+tar -czf ./$PACK_NAME --exclude=$PACK_NAME .
+echo "Package: $PACK_NAME"
+
+exit 0
