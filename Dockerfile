@@ -1,4 +1,4 @@
 FROM node:carbon
 
-CND ["sh", "./ci"]
+CMD ["sh", "./ci"]
 
