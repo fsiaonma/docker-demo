@@ -1,6 +1,10 @@
 FROM node:carbon
 
-RUN npm install
+# Bundle app source
+ADD . /src
 
-EXPOSE 8080
-CMD [ "node", "./server.js" ]
+# Install app dependencies
+RUN cd /src; npm install
+
+EXPOSE  8080
+CMD ["node", "/src/server.js"]
